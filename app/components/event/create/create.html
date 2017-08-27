@@ -1,0 +1,61 @@
+<div class="create">
+	<div>
+		<div class="alert alert-info" ng-if="event.isNew">
+			Brak wydarzenia, możesz założyć nowe
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group row">
+					<label class="col-md-2 control-label">Start</label>
+					<div class="col-md-10">
+						<div ng-repeat="start in available.starts" class="row">
+							<div class="checkbox">
+								<label class="ng-binding">
+									<input checklist-model="event.start" checklist-value="start.name" type="checkbox">
+									{{start.name}}
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-md-2 control-label">Instruktorzy</label>
+					<div class="col-md-10">
+						<div ng-repeat="instructor in available.instructors" class="row">
+							<div class="checkbox">
+								<label class="ng-binding">
+									<input checklist-model="event.instructors" checklist-value="instructor.name" type="checkbox">
+									{{instructor.name}}
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group row">
+					<label class="col-md-2 control-label">Szybowce</label>
+					<div class="col-md-10">
+						<div ng-repeat="glider in available.gliders" class="row">
+							<div class="checkbox">
+								<label class="ng-binding">
+									<input checklist-model="event.gliders" checklist-value="glider.name" type="checkbox">
+									{{glider.name}}
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="col-md-12 control-label">Info</label>
+			<div class="control-textarea">
+				<textarea ng-model="event.note" class="form-control" rows="3"></textarea>
+			</div>
+		</div>
+
+		<button type="button" class="btn btn-success" ng-click="save()">Zapisz</button>
+		<button type="button" class="btn btn-warning" ng-click="reset()">Reset</button>
+	</div>
+</div>

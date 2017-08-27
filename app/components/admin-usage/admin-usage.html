@@ -1,0 +1,20 @@
+<div class="usage">
+	<header>
+		Admin:
+	</header>
+	<div class="action" ng-if="admin">
+		<select class="form-control">
+			<option ng-repeat="item in $ctrl.users" value="{{item.name}}" ng-click="reserve(item._id, true)">{{item._id}}</option>
+		</select>
+	</div>
+	<div class="usages">
+		<ul>
+			<li ng-repeat="usage in usages">
+				<p class="user">
+					{{$index + 1}}. {{usage.user}}
+					<button ng-if="admin" class="glyphicon glyphicon-remove" ng-click="reserve(usage.user, false)"></button>
+				</p>
+			</li>
+		</ul>
+	</div>
+</div>

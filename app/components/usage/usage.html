@@ -1,0 +1,22 @@
+<div class="usage">
+	<header>
+		{{$ctrl.glider}}
+	</header>
+	<div class="action" ng-if="editable">
+		<select ng-model="range.val" ng-change="reserve()" class="form-control">
+			<option ng-repeat="item in ranges" value="{{item.type}}">{{item.name}}</option>
+		</select>
+	</div>
+	<div class="usages">
+		<ul>
+			<li ng-repeat="usage in sortedUsages" ng-class="{'self': usage.user === myself}">
+				<p class="user">
+					{{$index + 1}}. {{usage.user}}
+				</p>
+				<p class="usage-type">
+					{{ranges[usage.range].name}}
+				</p>
+			</li>
+		</ul>
+	</div>
+</div>

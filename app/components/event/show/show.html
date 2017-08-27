@@ -1,0 +1,36 @@
+<div class="show">
+	<div class="alert alert-warning" ng-if="event.canceled">
+		Wydarzenie czeka na usunięcie przez administratora lub reaktywację.
+	</div>
+	<div class="alert alert-info" ng-if="event.note">
+		{{event.note}}
+	</div>
+	<div class="form-group row">
+		<label class="col-md-2 control-label">Szybowce</label>
+		<div class="col-md-10">
+			<span class="label label-info" ng-repeat="glider in event.gliders">
+				{{glider}}
+			</span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-md-2 control-label">Instruktorzy</label>
+		<div class="col-md-10">
+			<span class="label label-info" ng-repeat="instructor in event.instructors">
+				{{instructor}}
+			</span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-md-2 control-label">Start</label>
+		<div class="col-md-10">
+			<span class="label label-info" ng-repeat="start in event.start">
+				{{start}}
+			</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<button ng-if="event.editable" ng-click="edit()" type="button" class="btn btn-warning">Edycja</button>
+		<button ng-click="delete()" type="button" class="btn btn-danger">Usuń</button>
+	</div>
+</div>

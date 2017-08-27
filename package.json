@@ -1,0 +1,25 @@
+{
+  "name": "SSAK",
+  "private": true,
+  "license": "Private",
+  "main": "start.js",
+  "description": "SSAK project",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "connect-mongodb-session": "^1.3.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "express-dataio": "^0.1.0",
+    "express-session": "^1.13.0",
+    "mongo-fitter": "^0.1.0",
+    "nodemailer": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "dev": "nodemon ./server/app.js",
+    "start": "node start.js"
+  }
+}

@@ -1,0 +1,50 @@
+<div class="main">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+				        aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" ui-sref="main.dashboard">Dzień lotny</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li ng-if="user.admin">
+						<a ui-sref="main.users">Użytkownicy</a>
+					</li>
+					<li ng-if="user.admin">
+						<a ui-sref="main.gliders">Szybowce</a>
+					</li>
+					<li>
+						<a ui-sref="main.logs">Logi</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li ng-if="user.dev">
+						<select class="user-selector form-control">
+							<option>Zmień użytkownika</option>
+							<option ng-repeat="user in users" value="{{user.name}}" ng-click="changeUser(user.name)">{{user.name}}</option>
+						</select>
+					</li>
+					<li>
+						<a>
+							{{user.name}}
+						</a>
+					</li>
+					<li ng-if="user.login" ng-click="logout()">
+						<a>Wyloguj</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="main-container container-fluid">
+		<div class="sidebar">
+			<calendar></calendar>
+		</div>
+		<div class="view-container">
+			<div ui-view="main"></div>
+		</div>
+	</div>
+</div>

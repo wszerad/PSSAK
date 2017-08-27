@@ -45,3 +45,32 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+.idea/SSAK.iml
+.idea/markdown-navigator/
+.idea/modules.xml
+.idea/markdown-navigator.xml
+.idea/misc.xml
+.idea/watcherTasks.xml
+node_modules/
+.idea/dbnavigator.xml
+.idea/ssak-deploy.iml
+server/config.js

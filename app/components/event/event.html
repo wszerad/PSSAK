@@ -1,0 +1,40 @@
+<div class="event">
+	<div class="page-header">
+		<div class="strip">
+			<button type="button" class="btn btn-info" ng-click="prevDay()">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			</button>
+			<span class="actual-date form-control-static">
+				{{time | date:'dd-MM-yyyy'}}
+				<span class="glyphicon glyphicon-sort-by-attributes"></span>
+				<select ng-if="queue.length">
+					<option>
+						{{order[user.name]}}. {{user.name}}
+					</option>
+					<option disabled>
+						-----------
+					</option>
+					<option ng-repeat="user in queue">
+						{{$index+1}}. {{user._id}}
+					</option>
+				</select>
+			</span>
+			<button type="button" class="btn btn-info" ng-click="nextDay()">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			</button>
+		</div>
+	</div>
+	<div class="empty" ng-if="!exists">
+		<div class="alert alert-info">
+			Brak wydarzenia
+		</div>
+	</div>
+	<div ng-if="exists">
+		<show event="event" ng-if="!edition"></show>
+		<create event="event" available="available" save="created" ng-if="edition"></create>
+		<div class="usages" ng-if="!edition">
+			<usage editable="editable && !canceled" usages="usages[glider]" order="order" glider="glider" date="time" ng-repeat="glider in gliders"></usage>
+			<admin-usage ng-if="user.admin || usages['admin'].length" usages="usages['admin']" date="time" users="queue"></admin-usage>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="logs">
+
+	<div class="page-header">
+		<div class="strip">
+			Logi
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<tbody>
+					<tr ng-repeat="log in $ctrl.logs">
+						<td>
+							{{log.editor}}
+						</td>
+						<td>
+							{{log.target}}
+						</td>
+						<td>
+							{{log.info}}
+						</td>
+						<td>
+							{{log.date}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
